@@ -16,7 +16,6 @@ public class ModItem {
         {{
             explosiveness = 0.5f;
             flammability = 0.3f;
-            radioactivity = 0f;
             buildable = true;//if true, it won't be destroyed;
             hidden = false;
         }};
