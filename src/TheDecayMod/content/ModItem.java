@@ -8,17 +8,25 @@ public class ModItem {
 
     //this function can add item unlimitedly
     public static Item
-    energyContainers;
+            emptyEnergyContainers,
+            fullEnergyContainers;
 
     //load the item we want to add
     public static void load(){
-        energyContainers = new Item("energy containers")
+
+        emptyEnergyContainers = new Item("empty energy containers")
         {{
-            explosiveness = 0.5f;
-            flammability = 0.3f;
-            buildable = true;//if true, it won't be destroyed;
-            hidden = false;
+            this.buildable = false;
+            this.hidden = false;
         }};
+        fullEnergyContainers = new Item("full energy containers")
+        {{
+            this.explosiveness = 0.5f;
+            this.flammability = 0.3f;
+            this.buildable = true;//if true, it won't be destroyed;
+            this.hidden = false;
+        }};
+
 
         //waiting for adding
 
