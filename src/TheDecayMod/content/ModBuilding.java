@@ -6,6 +6,7 @@ import mindustry.gen.Sounds;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.world.Block;
+import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.production.AttributeCrafter;
 
 import static TheDecayMod.content.ModItem.emptyEnergyContainers;
@@ -31,10 +32,27 @@ public class ModBuilding {
             this.craftTime = 60f;
             this.size = 2;
             //wait for editing
-            ambientSound = Sounds.smelter;
-            ambientSoundVolume = 0.06f;
+            this.ambientSound = Sounds.smelter;
+            this.ambientSoundVolume = 0.06f;
 
             consumePower(1.60f);
+        }};
+
+        energyContainerCharger=new ConsumeGenerator("energy container charger")
+        {{
+            requirements(Category.power,with(Items.copper,60,Items.lead,30,Items.titanium,15));
+            this.hasItems = true;
+            this.hasLiquids = false;
+            this.hasPower = true;
+            this.itemCapacity = 20;
+            //wait for editing
+            this.generateEffect = Fx.generatespark;
+            this.powerProduction = 2f;
+            this.itemDuration = 60f;
+            this.size = 2;
+            //wait for editing
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
 
         }};
 
