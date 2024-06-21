@@ -23,8 +23,8 @@ public class ModItem {
         }};
         fullEnergyContainers = new Item("full energy containers")
         {{
-            this.explosiveness = 0.5f;
-            this.flammability = 0.3f;
+            this.explosiveness = 0.1f;
+            this.flammability = 0.2f;
             this.buildable = true;//if true, it won't be destroyed;
             this.hidden = false;
         }};

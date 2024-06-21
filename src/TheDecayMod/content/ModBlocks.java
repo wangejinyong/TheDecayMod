@@ -9,7 +9,9 @@ import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.production.AttributeCrafter;
 
+
 import static TheDecayMod.content.ModItem.emptyEnergyContainers;
+import static TheDecayMod.content.ModItem.fullEnergyContainers;
 import static mindustry.type.ItemStack.with;
 
 public class ModBlocks {
@@ -21,7 +23,7 @@ public class ModBlocks {
             ;
 
     public static void load(){
-        energyContainerCreator=new AttributeCrafter("energy container creator")
+        energyContainerCreator=new AttributeCrafter("energy-container-creator")
         {{
             requirements(Category.crafting,with(Items.copper,60,Items.lead,30,Items.titanium,15));
             hasItems = true;
@@ -40,7 +42,7 @@ public class ModBlocks {
             consumePower(1.60f);
         }};
 
-        energyContainerConsumer=new ConsumeGenerator("energy container consumer")
+        energyContainerConsumer=new ConsumeGenerator("energy-container-consumer")
         {{
             requirements(Category.power,with(Items.copper,60,Items.lead,30,Items.titanium,15));
             hasItems = true;
@@ -50,11 +52,13 @@ public class ModBlocks {
             //wait for editing
             generateEffect = Fx.generatespark;
             powerProduction = 2f;
-            itemDuration = 60f;
+            itemDuration = 50f;
             size = 2;
             //wait for editing
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.06f;
+
+            consumeItems(with(fullEnergyContainers));
 
         }};
 
