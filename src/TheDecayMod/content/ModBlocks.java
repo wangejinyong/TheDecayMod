@@ -14,10 +14,6 @@ import static TheDecayMod.content.ModItem.emptyEnergyContainers;
 import static mindustry.type.ItemStack.with;
 
 public class ModBlocks {
-    public ModBlocks()
-    {
-        Log.info("THE DECAY is Loading the blocks...");
-    }
 
     //load the blocks
     public static Block

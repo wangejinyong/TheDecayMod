@@ -16,9 +16,8 @@ public class DecayMain extends Mod{
     public void loadContent(){
         Log.info("Loading some TheDecayMod content.");
 
-        //load mod items?
-        ModItem.load();
-        ModBlocks.load();
+        //load mod contents
+        DecayRegistration.LoadingAllTheContents();
 
     }
 
