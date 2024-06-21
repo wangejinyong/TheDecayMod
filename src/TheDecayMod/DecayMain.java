@@ -1,7 +1,5 @@
 package TheDecayMod;
 
-import TheDecayMod.content.ModBlocks;
-import TheDecayMod.content.ModItem;
 import arc.util.*;
 import mindustry.mod.*;
 

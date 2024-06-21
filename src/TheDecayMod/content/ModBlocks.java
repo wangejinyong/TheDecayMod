@@ -1,6 +1,5 @@
 package TheDecayMod.content;
 
-import arc.util.Log;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.gen.Sounds;
