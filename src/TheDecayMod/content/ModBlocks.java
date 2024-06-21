@@ -1,5 +1,6 @@
 package TheDecayMod.content;
 
+import arc.util.Log;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.gen.Sounds;
@@ -12,11 +13,18 @@ import mindustry.world.blocks.production.AttributeCrafter;
 import static TheDecayMod.content.ModItem.emptyEnergyContainers;
 import static mindustry.type.ItemStack.with;
 
-public class ModBuilding {
+public class ModBlocks {
+    public ModBlocks()
+    {
+        Log.info("THE DECAY is Loading the blocks...");
+    }
+
     //load the blocks
     public static Block
             //producer
-    energyContainerCreator,energyContainerCharger;
+    energyContainerCreator,energyContainerCharger
+
+            ;
 
     public static void load(){
         energyContainerCreator=new AttributeCrafter("energy container creator")
