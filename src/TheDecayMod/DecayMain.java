@@ -1,13 +1,10 @@
 package TheDecayMod;
 
-import arc.*;
+import TheDecayMod.content.ModBlocks;
+import TheDecayMod.content.ModItem;
 import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
-import mindustry.game.EventType.*;
-import mindustry.gen.*;
 import mindustry.mod.*;
-import mindustry.ui.dialogs.*;
+
 
 public class DecayMain extends Mod{
 
@@ -18,6 +15,11 @@ public class DecayMain extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading some TheDecayMod content.");
+
+        //load mod items?
+        ModItem.load();
+        ModBlocks.load();
+
     }
 
 }
