@@ -14,5 +14,6 @@ public class DecayRegistration {
     {
         ModItem.load();
         ModBlocks.load();
+        Log.info("loading contents complete.");
     }
 }

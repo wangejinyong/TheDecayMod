@@ -10,8 +10,8 @@ import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.production.AttributeCrafter;
 
 
-import static TheDecayMod.content.ModItem.emptyEnergyContainers;
-import static TheDecayMod.content.ModItem.fullEnergyContainers;
+import static TheDecayMod.content.ModItem.*;
+
 import static mindustry.type.ItemStack.with;
 
 public class ModBlocks {
@@ -25,7 +25,7 @@ public class ModBlocks {
     public static void load(){
         energyContainerCreator=new AttributeCrafter("energy-container-creator")
         {{
-            requirements(Category.crafting,with(Items.copper,60,Items.lead,30,Items.titanium,15));
+            requirements(Category.crafting,with(Items.copper,40,Items.lead,25,Items.titanium,15));
             hasItems = true;
             hasLiquids = false;
             hasPower = true;
@@ -44,7 +44,7 @@ public class ModBlocks {
 
         energyContainerConsumer=new ConsumeGenerator("energy-container-consumer")
         {{
-            requirements(Category.power,with(Items.copper,60,Items.lead,30,Items.titanium,15));
+            requirements(Category.power,with(Items.copper,40,Items.lead,25,Items.titanium,15));
             hasItems = true;
             hasLiquids = false;
             hasPower = true;
@@ -58,8 +58,27 @@ public class ModBlocks {
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.06f;
 
-            consumeItems(with(fullEnergyContainers));
+            consumeItems(with(fullEnergyContainers,1));
 
+        }};
+
+        energyContainerCharger=new AttributeCrafter("energy-container-charger")
+        {{
+            requirements(Category.power,with(Items.copper,40,Items.lead,25,Items.titanium,15));
+            hasItems = true;
+            hasLiquids = false;
+            hasPower = true;
+            itemCapacity = 20;
+            //wait for editing
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(fullEnergyContainers,1);
+            craftTime = 120f;
+            size = 2;
+            //wait for editing
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
+
+            consumePower(8.53f);
         }};
 
     }
