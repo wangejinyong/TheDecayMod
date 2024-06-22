@@ -7,7 +7,7 @@ import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
-import mindustry.world.blocks.production.AttributeCrafter;
+import mindustry.world.blocks.production.GenericCrafter;
 
 
 import static TheDecayMod.content.ModItem.*;
@@ -23,7 +23,7 @@ public class ModBlocks {
             ;
 
     public static void load(){
-        energyContainerCreator=new AttributeCrafter("energy-container-creator")
+        energyContainerCreator=new GenericCrafter("energy-container-creator")
         {{
             requirements(Category.crafting,with(Items.copper,40,Items.lead,25,Items.titanium,15));
             hasItems = true;
@@ -40,6 +40,8 @@ public class ModBlocks {
             ambientSoundVolume = 0.06f;
 
             consumePower(1.60f);
+            consumeItem(Items.copper,1);
+            consumeItem(Items.lead,1);
         }};
 
         energyContainerConsumer=new ConsumeGenerator("energy-container-consumer")
@@ -51,8 +53,8 @@ public class ModBlocks {
             itemCapacity = 20;
             //wait for editing
             generateEffect = Fx.generatespark;
-            powerProduction = 2f;
-            itemDuration = 50f;
+            powerProduction = 8f;
+            itemDuration = 120f;
             size = 2;
             //wait for editing
             ambientSound = Sounds.smelter;
@@ -62,7 +64,7 @@ public class ModBlocks {
 
         }};
 
-        energyContainerCharger=new AttributeCrafter("energy-container-charger")
+        energyContainerCharger=new GenericCrafter("energy-container-charger")
         {{
             requirements(Category.power,with(Items.copper,40,Items.lead,25,Items.titanium,15));
             hasItems = true;
@@ -78,7 +80,7 @@ public class ModBlocks {
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.06f;
 
-            consumePower(8.53f);
+            consumePower(8.00f);
         }};
 
     }

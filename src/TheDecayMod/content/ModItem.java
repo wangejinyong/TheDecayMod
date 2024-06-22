@@ -15,12 +15,12 @@ public class ModItem {
     //load the item we want to add
     public static void load(){
 
-        emptyEnergyContainers = new Item("empty energy containers")
+        emptyEnergyContainers = new Item("empty-energy-container")
         {{
             this.buildable = false;
             this.hidden = false;
         }};
-        fullEnergyContainers = new Item("full energy containers")
+        fullEnergyContainers = new Item("full-energy-container")
         {{
             this.explosiveness = 0.1f;
             this.flammability = 0.2f;
