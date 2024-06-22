@@ -60,7 +60,7 @@ public class ModBlocks {
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.06f;
 
-            consumeItems(with(fullEnergyContainers,1));
+            consumeItem(fullEnergyContainers,1);
 
         }};
 
@@ -81,6 +81,7 @@ public class ModBlocks {
             ambientSoundVolume = 0.06f;
 
             consumePower(8.00f);
+            consumeItem(emptyEnergyContainers,1);
         }};
 
     }
