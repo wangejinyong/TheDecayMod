@@ -98,8 +98,8 @@ public class ModBlocks {
 
         largeSolarThermalCollector=new SolarGenerator("large-solar-thermal-collector")
         {{
-            requirements(Category.power, with(Items.lead, 80, Items.metaglass, 115, Items.silicon, 10, Items.titanium,40));
-            powerProduction = 0.2f;
+            requirements(Category.power, with(Items.lead, 80, Items.metaglass, 110, Items.silicon, 10, Items.titanium,10));
+            powerProduction = 1.4f;
             size = 3;
             floating=true;
         }};
