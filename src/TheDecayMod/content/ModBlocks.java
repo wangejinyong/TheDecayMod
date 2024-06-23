@@ -7,6 +7,7 @@ import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
+import mindustry.world.blocks.power.SolarGenerator;
 import mindustry.world.blocks.production.GenericCrafter;
 
 
@@ -18,8 +19,10 @@ public class ModBlocks {
 
     //load the blocks
     public static Block
-            //producer
-    energyContainerCreator,energyContainerCharger,energyContainerConsumer
+            //connection power
+    energyContainerCreator,energyContainerCharger,energyContainerConsumer,
+            //solar generator
+    solarThermalCollector,largeSolarThermalCollector
             ;
 
     public static void load(){
@@ -82,6 +85,23 @@ public class ModBlocks {
 
             consumePower(8.00f);
             consumeItem(emptyEnergyContainers,1);
+        }};
+
+        solarThermalCollector=new SolarGenerator("solar-thermal-collector")
+        {{
+            requirements(Category.power, with(Items.lead, 10, Items.metaglass, 15));
+            powerProduction = 0.2f;
+            size = 2;
+            //can float on the water
+            floating=true;
+        }};
+
+        largeSolarThermalCollector=new SolarGenerator("large-solar-thermal-collector")
+        {{
+            requirements(Category.power, with(Items.lead, 80, Items.metaglass, 115, Items.silicon, 10, Items.titanium,40));
+            powerProduction = 0.2f;
+            size = 3;
+            floating=true;
         }};
 
     }
