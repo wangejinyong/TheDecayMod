@@ -1,11 +1,13 @@
 package TheDecayMod.ModModules;
 
+import arc.util.Timekeeper;
+
 import java.util.Random;
 
 
 public class RandomForWind {
     public static float windMultiply = 0f;
-    public static int  ticksAdjustment = -1;
+    public static Timekeeper TK = new Timekeeper(20);
 
 
     public static float randomWindMultiply(){
@@ -15,14 +17,11 @@ public class RandomForWind {
     }
 
     public static boolean randomWindEfficient(){
-        if(ticksAdjustment==-1 || ticksAdjustment == 1200) {
-            ticksAdjustment = 0;
+        if(TK.get()) {
+            TK.reset();
             return true;
         }
-        else {
-            ticksAdjustment++;
-            return false;
-        }
+        return false;
     }
 
 

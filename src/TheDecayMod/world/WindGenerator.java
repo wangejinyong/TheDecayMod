@@ -6,8 +6,10 @@ import arc.struct.*;
 import mindustry.world.meta.*;
 
 
+
 public class WindGenerator extends PowerGenerator {
     float WindPower = 1f;
+
     public WindGenerator(String name)
     {
         super(name);
@@ -32,7 +34,9 @@ public class WindGenerator extends PowerGenerator {
                 WindPower=RandomForWind.randomWindMultiply();
             }
             productionEfficiency = enabled ? WindPower :1f;
+
         }
+
     }
 
 }
