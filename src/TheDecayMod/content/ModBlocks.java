@@ -1,5 +1,6 @@
 package TheDecayMod.content;
 
+import TheDecayMod.world.WindGenerator;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.gen.Sounds;
@@ -22,7 +23,9 @@ public class ModBlocks {
             //connection power
     energyContainerCreator,energyContainerCharger,energyContainerConsumer,
             //solar generator
-    solarThermalCollector,largeSolarThermalCollector
+    solarThermalCollector,largeSolarThermalCollector,
+            //wind generator
+    windGenerator
             ;
 
     public static void load(){
@@ -101,6 +104,14 @@ public class ModBlocks {
             requirements(Category.power, with(Items.lead, 80, Items.metaglass, 110, Items.silicon, 10, Items.titanium,10));
             powerProduction = 1.4f;
             size = 3;
+            floating=true;
+        }};
+
+        windGenerator=new WindGenerator("wind-generator")
+        {{
+            requirements(Category.power, with(Items.copper,15,Items.lead, 15));
+            powerProduction = 0.1f;
+            size = 2;
             floating=true;
         }};
 
