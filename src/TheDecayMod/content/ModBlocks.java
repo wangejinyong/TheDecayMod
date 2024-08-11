@@ -9,6 +9,7 @@ import mindustry.type.ItemStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.SolarGenerator;
+import mindustry.world.blocks.power.ThermalGenerator;
 import mindustry.world.blocks.production.GenericCrafter;
 
 
@@ -25,7 +26,9 @@ public class ModBlocks {
             //solar generator
     solarThermalCollector,largeSolarThermalCollector,
             //wind generator
-    windGenerator
+    windGenerator,
+            //floor generator
+    waveAndTidalGenerator;
             ;
 
     public static void load(){
@@ -114,6 +117,14 @@ public class ModBlocks {
             size = 2;
             floating=true;
         }};
+
+
+        waveAndTidalGenerator=new ThermalGenerator("wave-and-tidal-generator")
+        {{
+            ;
+        }};
+
+
 
     }
 }
