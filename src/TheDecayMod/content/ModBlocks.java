@@ -28,7 +28,7 @@ public class ModBlocks {
             //wind generator
     windGenerator,
             //floor generator
-    waveAndTidalGenerator;
+    waveAndTidalGenerator
             ;
 
     public static void load(){
