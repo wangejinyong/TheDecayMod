@@ -1,4 +1,4 @@
-package TheDecayMod.world;
+package TheDecayMod.power;
 
 import TheDecayMod.ModModules.RandomForWind;
 import mindustry.world.blocks.power.PowerGenerator;

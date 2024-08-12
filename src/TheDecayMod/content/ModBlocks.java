@@ -1,6 +1,6 @@
 package TheDecayMod.content;
 
-import TheDecayMod.world.WindGenerator;
+import TheDecayMod.power.WindGenerator;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.gen.Sounds;
@@ -121,7 +121,16 @@ public class ModBlocks {
 
         waveAndTidalGenerator=new ThermalGenerator("wave-and-tidal-generator")
         {{
-            ;
+            requirements(Category.power, with(Items.copper, 20, Items.lead, 15, Items.graphite, 10, Items.silicon, 10, Items.metaglass, 20));
+            powerProduction = 0.9f;
+            generateEffect = Fx.redgeneratespark;
+            effectChance = 0.015f;
+            size = 5;
+            floating = true;
+            ambientSound = Sounds.hum;
+            ambientSoundVolume = 0.06f;
+            //dislike the water extractor,change the attribute.
+            //attribute= Attribute.water;
         }};
 
 
