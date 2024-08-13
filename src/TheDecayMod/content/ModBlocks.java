@@ -1,5 +1,6 @@
 package TheDecayMod.content;
 
+import TheDecayMod.power.WaveGenerator;
 import TheDecayMod.power.WindGenerator;
 import mindustry.content.Fx;
 import mindustry.content.Items;
@@ -9,7 +10,6 @@ import mindustry.type.ItemStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.SolarGenerator;
-import mindustry.world.blocks.power.ThermalGenerator;
 import mindustry.world.blocks.production.GenericCrafter;
 
 
@@ -119,12 +119,10 @@ public class ModBlocks {
         }};
 
 
-        waveAndTidalGenerator=new ThermalGenerator("wave-and-tidal-generator")
+        waveAndTidalGenerator=new WaveGenerator("wave-and-tidal-generator")
         {{
             requirements(Category.power, with(Items.copper, 20, Items.lead, 15, Items.graphite, 10, Items.silicon, 10, Items.metaglass, 20));
             powerProduction = 0.9f;
-            generateEffect = Fx.redgeneratespark;
-            effectChance = 0.015f;
             size = 5;
             floating = true;
             ambientSound = Sounds.hum;
