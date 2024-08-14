@@ -5,6 +5,7 @@ import TheDecayMod.ModModules.DecayToolFindTheWater;
 import arc.Core;
 import arc.util.Log;
 import mindustry.content.Liquids;
+import mindustry.game.Team;
 import mindustry.world.Tile;
 import mindustry.world.blocks.power.PowerGenerator;
 
@@ -31,6 +32,17 @@ public class WaveGenerator extends PowerGenerator {
         }
     }
 
+    //Make the generator cannot place on floor without water.
+    @Override
+    public boolean canPlaceOn(Tile tile, Team team, int rotation) {
+        for(Tile other :tile.getLinkedTilesAs(this,tempTiles)){
+            if(other.floor().liquidDrop == Liquids.water){
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public class WaveGeneratorBuild extends GeneratorBuild {
         public float efficientPerBlock = 0f;
