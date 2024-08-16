@@ -122,7 +122,7 @@ public class ModBlocks {
         waveAndTidalGenerator=new WaveGenerator("wave-and-tidal-generator")
         {{
             requirements(Category.power, with(Items.copper, 20, Items.lead, 15, Items.graphite, 10, Items.silicon, 10, Items.metaglass, 20));
-            powerProduction = 0.9f;
+            powerProduction = 0.3f;
             size = 5;
             floating = true;
             ambientSound = Sounds.hum;
